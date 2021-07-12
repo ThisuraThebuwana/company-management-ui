@@ -10,19 +10,25 @@ import { host } from './Constants';
 function App() {
 
     const [name, setName] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
     useEffect(() => {
         (
             async () => {
-                const response = await fetch(host+'/user/user', {
-                    headers: {'Content-Type': 'application/json'},
-                    credentials: 'include',
-                });
+                if(isLoggedIn){
+                    const response = await fetch(host+'/parcel/parcels', {
+                        headers: {'Content-Type': 'application/json'},
+                        credentials: 'include',
+                    });
 
-                const content = await response.json();
-
-                setName(content.name);
+                    const content = await response.json();
+                    if(content.length === undefined){
+                        setName('');
+                    }else{
+                        setName('Home Page');
+                    }
+                }
             }
         )();
 
@@ -31,10 +37,10 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Nav name={name} setName={setName}/>
+                <Nav name={name} setName={setName} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 <main className="form-signin">
                     <Route path="/" exact component={() => <Home name={name}/>}/>
-                    <Route path="/login" component={() => <Login setName={setName}/>}/>
+                    <Route path="/login" component={() => <Login setIsLoggedIn={setIsLoggedIn}/>}/>
                     <Route path="/register" component={Register}/>
                 </main>
             </BrowserRouter>

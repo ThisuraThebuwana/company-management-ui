@@ -10,7 +10,7 @@ const Login = (props) => {
     const submit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch(host+'/user/login', {
+        await fetch(host+'/user/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',
@@ -20,11 +20,9 @@ const Login = (props) => {
             })
         });
 
-        const content = await response.json();
-
         setRedirect(true);
 
-        props.setName(content.message);
+        props.setIsLoggedIn(true);
 
     };
 

@@ -8,11 +8,12 @@ const Nav = (props) => {
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',
         });
-        props.setName('');
+        props.setName('assaas');
+        props.setIsLoggedIn(false);
     };
     let menu;
 
-    if(props.name === '' || props.name === undefined) {
+    if(!props.isLoggedIn) {
         menu = (
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
                 <li className="nav-item">
