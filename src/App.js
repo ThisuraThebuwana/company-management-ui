@@ -10,6 +10,7 @@ import { host } from './Constants';
 function App() {
 
     const [name, setName] = useState('');
+    const [tableContent, setTableContent] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
@@ -27,6 +28,7 @@ function App() {
                         setName('');
                     }else{
                         setName('Home Page');
+                        setTableContent(content);
                     }
                 }
             }
@@ -39,7 +41,7 @@ function App() {
             <BrowserRouter>
                 <Nav name={name} setName={setName} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
                 <main className="form-signin">
-                    <Route path="/" exact component={() => <Home name={name}/>}/>
+                    <Route path="/" exact component={() => <Home name={name} tableContent={tableContent}/>}/>
                     <Route path="/login" component={() => <Login setIsLoggedIn={setIsLoggedIn}/>}/>
                     <Route path="/register" component={Register}/>
                 </main>

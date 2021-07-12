@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Redirect} from "react-router-dom";
-import { host } from '../Constants';
+import {host} from '../Constants';
 
 const Login = (props) => {
     const [user_id, setUserID] = useState('');
@@ -10,7 +10,7 @@ const Login = (props) => {
     const submit = async (e) => {
         e.preventDefault();
 
-        await fetch(host+'/user/login', {
+        await fetch(host + '/user/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',
@@ -31,7 +31,7 @@ const Login = (props) => {
     }
 
     return (
-        <form onSubmit={submit}>
+        <form onSubmit={submit} className="form-login">
             <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
             <input className="form-control"
                    placeholder="User ID" required
