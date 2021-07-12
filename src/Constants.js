@@ -8,7 +8,7 @@ const COLUMNS = [
         accessor: 'index'
     },
     {
-        Header: 'Datetime',
+        Header: 'Date & Time',
         accessor: 'datetime'
     },
     {
@@ -26,6 +26,10 @@ const COLUMNS = [
     {
         Header: 'Address',
         accessor: 'address'
+    },
+    {
+        Header: 'City',
+        accessor: 'city'
     },
     {
         Header: 'Phone No',

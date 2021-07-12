@@ -5,7 +5,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import { host } from './Constants';
+import {host} from './Constants';
 
 function App() {
 
@@ -17,16 +17,23 @@ function App() {
     useEffect(() => {
         (
             async () => {
-                if(isLoggedIn){
-                    const response = await fetch(host+'/parcel/parcels', {
+                if (isLoggedIn) {
+                    let response = await fetch(host + '/parcel/all-parcels', {
                         headers: {'Content-Type': 'application/json'},
                         credentials: 'include',
                     });
 
+                    if (response.status === 401) {
+                        response = await fetch(host + '/parcel/parcels', {
+                            headers: {'Content-Type': 'application/json'},
+                            credentials: 'include',
+                        });
+                    }
+
                     const content = await response.json();
-                    if(content.length === undefined){
+                    if (content.length === undefined) {
                         setName('');
-                    }else{
+                    } else {
                         setName('Home Page');
                         setTableContent(content);
                     }
