@@ -8,7 +8,6 @@ const Nav = (props) => {
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',
         });
-        props.setName('assaas');
         props.setIsLoggedIn(false);
     };
     let menu;
@@ -34,7 +33,7 @@ const Nav = (props) => {
         )
     }
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link to="/" className="navbar-brand">Home</Link>
                 <div>

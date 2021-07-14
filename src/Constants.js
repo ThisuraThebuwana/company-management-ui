@@ -53,5 +53,16 @@ const COLUMNS = [
     },
 ];
 
+const SidebarData = [
+    {
+        title: "Home",
+        link: "/home",
+    },
+    {
+        title: "Upload",
+        link: "/upload",
+    },
+];
 
-export {host, COLUMNS};
+
+export {host, COLUMNS, SidebarData};

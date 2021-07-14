@@ -1,5 +1,12 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
 .form-signin {
-  padding: 20px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .form-login {
@@ -8,4 +15,41 @@
   padding: 10px;
 }
 
+.SideBar {
+  height: 100%;
+  background-color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+.Home {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.Home .row {
+  height: 100vh;
+}
+
+.SidebarList {
+  height: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.SidebarList .row {
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #313539;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
 
