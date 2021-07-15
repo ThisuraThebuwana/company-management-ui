@@ -56,7 +56,7 @@ const COLUMNS = [
 const SidebarData = [
     {
         title: "Home",
-        link: "/home",
+        link: "/",
     },
     {
         title: "Upload",

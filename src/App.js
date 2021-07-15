@@ -1,5 +1,5 @@
 import './App.css';
-import React, {Component, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Nav from "./components/Nav";
 import {BrowserRouter, Route} from "react-router-dom";
 import Home from "./pages/Home";

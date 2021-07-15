@@ -38,14 +38,15 @@ const Home = (props) => {
             {tableContent ?
                 <div className="Home">
                     <div className="row">
-                        <div className="col-sm-2">
+                        <div className="col-sm-2" style={{padding:0}}>
                             <SideNavBar/>
                         </div>
-                        <div className="col-sm-10">
+                        <div className="col-sm-10" style={{padding:10}}>
                             <Table tableContent={tableContent}/>
                         </div>
                     </div>
                 </div> : 'You are not logged in'}
+
         </div>
 
     );
