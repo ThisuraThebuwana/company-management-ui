@@ -3,9 +3,7 @@ import {host} from "../Constants";
 import Table from "../components/Table";
 import SideNavBar from "../components/SideNavBar";
 
-const Home = (props) => {
-
-    const [tableContent, setTableContent] = useState(null);
+const AllParcels = (props) => {
 
     useEffect(() => {
         (
@@ -26,7 +24,7 @@ const Home = (props) => {
                     const content = await response.json();
                     if (content.length === undefined) {
                     } else {
-                        setTableContent(content);
+                        props.setTableContent(content);
                     }
                 }
             }
@@ -35,14 +33,14 @@ const Home = (props) => {
     });
     return (
         <div>
-            {tableContent ?
-                <div className="Home">
+            {props.tableContent ?
+                <div className="AllParcels">
                     <div className="row">
                         <div className="col-sm-2" style={{padding:0}}>
                             <SideNavBar/>
                         </div>
                         <div className="col-sm-10" style={{padding:10}}>
-                            <Table tableContent={tableContent}/>
+                            <Table tableContent={props.tableContent}/>
                         </div>
                     </div>
                 </div> : 'You are not logged in'}
@@ -52,4 +50,4 @@ const Home = (props) => {
     );
 };
 
-export default Home;
+export default AllParcels;

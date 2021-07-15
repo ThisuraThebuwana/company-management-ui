@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import "./table.css"
+import "../components/table.css"
 import SideNavBar from "../components/SideNavBar";
 import {host} from "../Constants";
 import axios from "axios";

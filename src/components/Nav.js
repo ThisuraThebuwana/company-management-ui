@@ -35,7 +35,7 @@ const Nav = (props) => {
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <div className="container-fluid">
-                <Link to="/" className="navbar-brand">Home</Link>
+                <Link to="/" className="navbar-brand">LOGO</Link>
                 <div>
                     {menu}
                 </div>

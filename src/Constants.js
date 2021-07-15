@@ -55,7 +55,7 @@ const COLUMNS = [
 
 const SidebarData = [
     {
-        title: "Home",
+        title: "AllParcels",
         link: "/",
     },
     {
