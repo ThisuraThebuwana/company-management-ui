@@ -24,9 +24,14 @@ const Login = (props) => {
 
         props.setIsLoggedIn(true);
 
+        if(user_id.charAt(0)==='A'){
+            props.setIsSuperAdmin(true);
+        }
+
     };
 
     if (redirect) {
+        console.log("redirecting")
         return <Redirect to="/"/>;
     }
 

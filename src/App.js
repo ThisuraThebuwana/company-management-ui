@@ -13,6 +13,7 @@ function App() {
     const [authStatus, setAuthStatus] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [tableContent, setTableContent] = useState(null);
+    const [isSuperAdmin, setIsSuperAdmin] = useState(false);
 
     useEffect(() => {
         (
@@ -36,10 +37,10 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
+                <Nav isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setIsSuperAdmin={setIsSuperAdmin}/>
                 <main className="form-signin">
-                    <Route path="/" exact component={() => <AllParcels isLoggedIn={isLoggedIn} tableContent={tableContent} setTableContent={setTableContent}/>}/>
-                    <Route path="/login" component={() => <Login setIsLoggedIn={setIsLoggedIn}/>}/>
+                    <Route path="/" exact component={() => <AllParcels isLoggedIn={isLoggedIn} tableContent={tableContent} setTableContent={setTableContent} isSuperAdmin={isSuperAdmin}/>}/>
+                    <Route path="/login" component={() => <Login setIsLoggedIn={setIsLoggedIn} setIsSuperAdmin={setIsSuperAdmin}/>}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/upload" component={FileUploader}/>
                 </main>

@@ -9,6 +9,7 @@ const Nav = (props) => {
             credentials: 'include',
         });
         props.setIsLoggedIn(false);
+        props.setIsSuperAdmin(false);
     };
     let menu;
 

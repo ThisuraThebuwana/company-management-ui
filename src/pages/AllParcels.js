@@ -9,12 +9,14 @@ const AllParcels = (props) => {
         (
             async () => {
                 if (props.isLoggedIn) {
-                    let response = await fetch(host + '/parcel/all-parcels', {
-                        headers: {'Content-Type': 'application/json'},
-                        credentials: 'include',
-                    });
 
-                    if (response.status === 401) {
+                    let response;
+                    if(props.isSuperAdmin){
+                        response = await fetch(host + '/parcel/all-parcels', {
+                            headers: {'Content-Type': 'application/json'},
+                            credentials: 'include',
+                        });
+                    }else{
                         response = await fetch(host + '/parcel/parcels', {
                             headers: {'Content-Type': 'application/json'},
                             credentials: 'include',
@@ -34,7 +36,7 @@ const AllParcels = (props) => {
     return (
         <div>
             {props.tableContent ?
-                <div className="AllParcels">
+                <div className="Home">
                     <div className="row">
                         <div className="col-sm-2" style={{padding:0}}>
                             <SideNavBar/>
